@@ -1,0 +1,50 @@
+INSTRUCCIONES PARA SUBIR VALUAGT A NETLIFY
+==========================================
+
+TU CARPETA DEBE TENER ESTA ESTRUCTURA:
+  valuagt/
+  ├── index.html
+  ├── manifest.json
+  ├── sw.js
+  ├── netlify.toml
+  └── netlify/
+      └── functions/
+          └── valuar.js
+
+PASO 1 — SUBIR A NETLIFY
+-------------------------
+1. Ve a netlify.com e inicia sesión
+2. Arrastra la carpeta "valuagt" completa al panel de Netlify
+3. Espera que termine el deploy
+
+PASO 2 — AGREGAR TU API KEY (MUY IMPORTANTE)
+---------------------------------------------
+La API key ya NO va en el HTML — ahora va guardada de forma
+segura en Netlify. Así nadie puede verla.
+
+1. En Netlify, abre tu sitio
+2. Ve a: Site settings → Environment variables
+3. Haz clic en "Add a variable"
+4. Pon exactamente esto:
+   - Key:   ANTHROPIC_API_KEY
+   - Value: sk-ant-... (tu clave de Anthropic)
+5. Guarda
+
+PASO 3 — HACER REDEPLOY
+------------------------
+1. Ve a la sección "Deploys" de tu sitio en Netlify
+2. Haz clic en el botón "Trigger deploy" → "Deploy site"
+3. Espera 1 minuto y listo
+
+PASO 4 — PROBAR
+---------------
+Abre tu URL de Netlify (ej: tuapp.netlify.app) y prueba
+la app. Ahora sí debería funcionar sin errores.
+
+OBTENER TU API KEY
+------------------
+Si no tienes una:
+1. Ve a: console.anthropic.com
+2. Crea cuenta gratis (te dan $5 de crédito inicial)
+3. Ve a "API Keys" → "Create Key"
+4. Copia la clave y úsala en el Paso 2
