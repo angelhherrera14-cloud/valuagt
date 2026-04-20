@@ -825,14 +825,9 @@ Devuelve SOLO este JSON (sin comentarios, sin texto extra):
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": API_KEY,
-          "anthropic-version": "2023-06-01",
-          "anthropic-dangerous-direct-browser-access": "true"
+          headers: { "Content-Type": "application/json" },
         },
-        body: JSON.stringify({
-          model: "claude-haiku-4-5-20251001",
-          max_tokens: 1000,
-          messages: [{ role: "user", content: prompt }]
+        body: body: JSON.stringify({ messages: [{ role: "user", content: prompt }] })
         })
       });
 
