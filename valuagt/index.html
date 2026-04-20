@@ -821,7 +821,7 @@ Devuelve SOLO este JSON (sin comentarios, sin texto extra):
 }`;
 
     try {
-      const resp = await fetch("https://api.anthropic.com/v1/messages", {
+      const resp = await fetch("/.netlify/functions/valuar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
